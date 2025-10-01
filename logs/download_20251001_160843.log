@@ -1,0 +1,75 @@
+2025-10-01 16:08:44,002 - INFO - Logging to D:\Testers\ai_qwen\logs\download_20251001_160843.log
+2025-10-01 16:08:44,004 - INFO - Enabled hf_xet-backed transfer for improved throughput.
+2025-10-01 16:08:44,004 - INFO - Fetching repository file list for Qwen/Qwen-Image-Edit-2509
+2025-10-01 16:08:44,458 - INFO - Found 35 files in repository
+2025-10-01 16:08:44,459 - INFO - Downloading .gitattributes (attempt 1/5, size 0B)
+2025-10-01 16:08:44,731 - INFO - Finished .gitattributes (1.54 KB). Progress: 1.54 KB / 0B
+2025-10-01 16:08:44,732 - INFO - Downloading README.md (attempt 1/5, size 0B)
+2025-10-01 16:08:44,992 - INFO - Finished README.md (10.03 KB). Progress: 11.58 KB / 0B
+2025-10-01 16:08:44,993 - INFO - Downloading model_index.json (attempt 1/5, size 0B)
+2025-10-01 16:08:45,246 - INFO - Finished model_index.json (0.50 KB). Progress: 12.08 KB / 0B
+2025-10-01 16:08:45,247 - INFO - Downloading processor/added_tokens.json (attempt 1/5, size 0B)
+2025-10-01 16:08:45,511 - INFO - Finished processor/added_tokens.json (0.59 KB). Progress: 12.67 KB / 0B
+2025-10-01 16:08:45,512 - INFO - Downloading processor/chat_template.jinja (attempt 1/5, size 0B)
+2025-10-01 16:08:45,779 - INFO - Finished processor/chat_template.jinja (0.99 KB). Progress: 13.66 KB / 0B
+2025-10-01 16:08:45,780 - INFO - Downloading processor/merges.txt (attempt 1/5, size 0B)
+2025-10-01 16:08:46,041 - INFO - Finished processor/merges.txt (1.59 MB). Progress: 1.61 MB / 0B
+2025-10-01 16:08:46,042 - INFO - Downloading processor/preprocessor_config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:46,301 - INFO - Finished processor/preprocessor_config.json (0.77 KB). Progress: 1.61 MB / 0B
+2025-10-01 16:08:46,301 - INFO - Downloading processor/special_tokens_map.json (attempt 1/5, size 0B)
+2025-10-01 16:08:46,568 - INFO - Finished processor/special_tokens_map.json (0.60 KB). Progress: 1.61 MB / 0B
+2025-10-01 16:08:46,569 - INFO - Downloading processor/tokenizer.json (attempt 1/5, size 0B)
+2025-10-01 16:08:46,818 - INFO - Finished processor/tokenizer.json (10.89 MB). Progress: 12.50 MB / 0B
+2025-10-01 16:08:46,818 - INFO - Downloading processor/tokenizer_config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:47,093 - INFO - Finished processor/tokenizer_config.json (4.62 KB). Progress: 12.51 MB / 0B
+2025-10-01 16:08:47,094 - INFO - Downloading processor/video_preprocessor_config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:47,371 - INFO - Finished processor/video_preprocessor_config.json (0.88 KB). Progress: 12.51 MB / 0B
+2025-10-01 16:08:47,372 - INFO - Downloading processor/vocab.json (attempt 1/5, size 0B)
+2025-10-01 16:08:47,635 - INFO - Finished processor/vocab.json (2.65 MB). Progress: 15.16 MB / 0B
+2025-10-01 16:08:47,635 - INFO - Downloading scheduler/scheduler_config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:47,913 - INFO - Finished scheduler/scheduler_config.json (485.00 B). Progress: 15.16 MB / 0B
+2025-10-01 16:08:47,920 - INFO - Downloading text_encoder/config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:48,192 - INFO - Finished text_encoder/config.json (3.14 KB). Progress: 15.16 MB / 0B
+2025-10-01 16:08:48,193 - INFO - Downloading text_encoder/generation_config.json (attempt 1/5, size 0B)
+2025-10-01 16:08:48,458 - INFO - Finished text_encoder/generation_config.json (244.00 B). Progress: 15.16 MB / 0B
+2025-10-01 16:08:48,459 - INFO - Downloading text_encoder/model-00001-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:08:48,703 - INFO - Finished text_encoder/model-00001-of-00004.safetensors (4.63 GB). Progress: 4.64 GB / 0B
+2025-10-01 16:08:48,704 - INFO - Downloading text_encoder/model-00002-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:08:48,970 - INFO - Finished text_encoder/model-00002-of-00004.safetensors (4.65 GB). Progress: 9.29 GB / 0B
+2025-10-01 16:08:48,970 - INFO - Downloading text_encoder/model-00003-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:08:49,673 - INFO - Finished text_encoder/model-00003-of-00004.safetensors (4.59 GB). Progress: 13.88 GB / 0B
+2025-10-01 16:08:49,674 - INFO - Downloading text_encoder/model-00004-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:09:17,861 - INFO - Finished text_encoder/model-00004-of-00004.safetensors (1.58 GB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:17,861 - INFO - Downloading text_encoder/model.safetensors.index.json (attempt 1/5, size 0B)
+2025-10-01 16:09:18,148 - INFO - Finished text_encoder/model.safetensors.index.json (56.30 KB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:18,149 - INFO - Downloading tokenizer/added_tokens.json (attempt 1/5, size 0B)
+2025-10-01 16:09:18,427 - INFO - Finished tokenizer/added_tokens.json (0.59 KB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:18,428 - INFO - Downloading tokenizer/chat_template.jinja (attempt 1/5, size 0B)
+2025-10-01 16:09:18,711 - INFO - Finished tokenizer/chat_template.jinja (2.37 KB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:18,711 - INFO - Downloading tokenizer/merges.txt (attempt 1/5, size 0B)
+2025-10-01 16:09:19,018 - INFO - Finished tokenizer/merges.txt (1.59 MB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:19,019 - INFO - Downloading tokenizer/special_tokens_map.json (attempt 1/5, size 0B)
+2025-10-01 16:09:19,305 - INFO - Finished tokenizer/special_tokens_map.json (0.60 KB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:19,305 - INFO - Downloading tokenizer/tokenizer_config.json (attempt 1/5, size 0B)
+2025-10-01 16:09:19,590 - INFO - Finished tokenizer/tokenizer_config.json (4.58 KB). Progress: 15.46 GB / 0B
+2025-10-01 16:09:19,590 - INFO - Downloading tokenizer/vocab.json (attempt 1/5, size 0B)
+2025-10-01 16:09:19,884 - INFO - Finished tokenizer/vocab.json (3.23 MB). Progress: 15.47 GB / 0B
+2025-10-01 16:09:19,884 - INFO - Downloading transformer/config.json (attempt 1/5, size 0B)
+2025-10-01 16:09:20,169 - INFO - Finished transformer/config.json (339.00 B). Progress: 15.47 GB / 0B
+2025-10-01 16:09:20,170 - INFO - Downloading transformer/diffusion_pytorch_model-00001-of-00005.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:12:10,995 - INFO - Finished transformer/diffusion_pytorch_model-00001-of-00005.safetensors (9.29 GB). Progress: 24.75 GB / 0B
+2025-10-01 16:12:10,995 - INFO - Downloading transformer/diffusion_pytorch_model-00002-of-00005.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:15:07,594 - INFO - Finished transformer/diffusion_pytorch_model-00002-of-00005.safetensors (9.30 GB). Progress: 34.06 GB / 0B
+2025-10-01 16:15:07,596 - INFO - Downloading transformer/diffusion_pytorch_model-00003-of-00005.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:18:00,386 - INFO - Finished transformer/diffusion_pytorch_model-00003-of-00005.safetensors (9.30 GB). Progress: 43.36 GB / 0B
+2025-10-01 16:18:00,386 - INFO - Downloading transformer/diffusion_pytorch_model-00004-of-00005.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:20:47,419 - INFO - Finished transformer/diffusion_pytorch_model-00004-of-00005.safetensors (9.25 GB). Progress: 52.61 GB / 0B
+2025-10-01 16:20:47,419 - INFO - Downloading transformer/diffusion_pytorch_model-00005-of-00005.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:21:04,100 - INFO - Finished transformer/diffusion_pytorch_model-00005-of-00005.safetensors (0.91 GB). Progress: 53.52 GB / 0B
+2025-10-01 16:21:04,100 - INFO - Downloading transformer/diffusion_pytorch_model.safetensors.index.json (attempt 1/5, size 0B)
+2025-10-01 16:21:04,374 - INFO - Finished transformer/diffusion_pytorch_model.safetensors.index.json (194.23 KB). Progress: 53.52 GB / 0B
+2025-10-01 16:21:04,375 - INFO - Downloading vae/config.json (attempt 1/5, size 0B)
+2025-10-01 16:21:04,703 - INFO - Finished vae/config.json (0.71 KB). Progress: 53.52 GB / 0B
+2025-10-01 16:21:04,704 - INFO - Downloading vae/diffusion_pytorch_model.safetensors (attempt 1/5, size 0B)
+2025-10-01 16:21:09,681 - INFO - Finished vae/diffusion_pytorch_model.safetensors (242.05 MB). Progress: 53.76 GB / 0B
+2025-10-01 16:21:09,682 - INFO - All files downloaded successfully to D:\AIModels\Qwen-Image-Edit-2509

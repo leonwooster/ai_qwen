@@ -1,0 +1,42 @@
+2025-10-01 14:25:21,094 - INFO - Logging to D:\Testers\ai_qwen\logs\download_20251001_142521.log
+2025-10-01 14:25:21,096 - INFO - Enabled hf_xet-backed transfer for improved throughput.
+2025-10-01 14:25:21,096 - INFO - Fetching repository file list for Qwen/Qwen-Image-Edit-2509
+2025-10-01 14:25:21,948 - INFO - Found 35 files in repository
+2025-10-01 14:25:21,949 - INFO - Downloading .gitattributes (attempt 1/5, size 0B)
+2025-10-01 14:25:22,336 - INFO - Finished .gitattributes (1.54 KB). Progress: 1.54 KB / 0B
+2025-10-01 14:25:22,337 - INFO - Downloading README.md (attempt 1/5, size 0B)
+2025-10-01 14:25:22,707 - INFO - Finished README.md (10.03 KB). Progress: 11.58 KB / 0B
+2025-10-01 14:25:22,713 - INFO - Downloading model_index.json (attempt 1/5, size 0B)
+2025-10-01 14:25:23,093 - INFO - Finished model_index.json (0.50 KB). Progress: 12.08 KB / 0B
+2025-10-01 14:25:23,093 - INFO - Downloading processor/added_tokens.json (attempt 1/5, size 0B)
+2025-10-01 14:25:23,473 - INFO - Finished processor/added_tokens.json (0.59 KB). Progress: 12.67 KB / 0B
+2025-10-01 14:25:23,473 - INFO - Downloading processor/chat_template.jinja (attempt 1/5, size 0B)
+2025-10-01 14:25:24,096 - INFO - Finished processor/chat_template.jinja (0.99 KB). Progress: 13.66 KB / 0B
+2025-10-01 14:25:24,096 - INFO - Downloading processor/merges.txt (attempt 1/5, size 0B)
+2025-10-01 14:25:24,649 - INFO - Finished processor/merges.txt (1.59 MB). Progress: 1.61 MB / 0B
+2025-10-01 14:25:24,649 - INFO - Downloading processor/preprocessor_config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:25,049 - INFO - Finished processor/preprocessor_config.json (0.77 KB). Progress: 1.61 MB / 0B
+2025-10-01 14:25:25,049 - INFO - Downloading processor/special_tokens_map.json (attempt 1/5, size 0B)
+2025-10-01 14:25:25,497 - INFO - Finished processor/special_tokens_map.json (0.60 KB). Progress: 1.61 MB / 0B
+2025-10-01 14:25:25,499 - INFO - Downloading processor/tokenizer.json (attempt 1/5, size 0B)
+2025-10-01 14:25:29,654 - INFO - Finished processor/tokenizer.json (10.89 MB). Progress: 12.50 MB / 0B
+2025-10-01 14:25:29,656 - INFO - Downloading processor/tokenizer_config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:30,016 - INFO - Finished processor/tokenizer_config.json (4.62 KB). Progress: 12.51 MB / 0B
+2025-10-01 14:25:30,016 - INFO - Downloading processor/video_preprocessor_config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:30,387 - INFO - Finished processor/video_preprocessor_config.json (0.88 KB). Progress: 12.51 MB / 0B
+2025-10-01 14:25:30,388 - INFO - Downloading processor/vocab.json (attempt 1/5, size 0B)
+2025-10-01 14:25:30,950 - INFO - Finished processor/vocab.json (2.65 MB). Progress: 15.16 MB / 0B
+2025-10-01 14:25:30,951 - INFO - Downloading scheduler/scheduler_config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:31,326 - INFO - Finished scheduler/scheduler_config.json (485.00 B). Progress: 15.16 MB / 0B
+2025-10-01 14:25:31,327 - INFO - Downloading text_encoder/config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:31,738 - INFO - Finished text_encoder/config.json (3.14 KB). Progress: 15.16 MB / 0B
+2025-10-01 14:25:31,738 - INFO - Downloading text_encoder/generation_config.json (attempt 1/5, size 0B)
+2025-10-01 14:25:32,106 - INFO - Finished text_encoder/generation_config.json (244.00 B). Progress: 15.16 MB / 0B
+2025-10-01 14:25:32,107 - INFO - Downloading text_encoder/model-00001-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 14:39:35,270 - INFO - Finished text_encoder/model-00001-of-00004.safetensors (4.63 GB). Progress: 4.64 GB / 0B
+2025-10-01 14:39:35,271 - INFO - Downloading text_encoder/model-00002-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 14:45:06,661 - INFO - Finished text_encoder/model-00002-of-00004.safetensors (4.65 GB). Progress: 9.29 GB / 0B
+2025-10-01 14:45:06,662 - INFO - Downloading text_encoder/model-00003-of-00004.safetensors (attempt 1/5, size 0B)
+2025-10-01 14:52:03,760 - INFO - Finished text_encoder/model-00003-of-00004.safetensors (4.59 GB). Progress: 13.88 GB / 0B
+2025-10-01 14:52:03,760 - INFO - Pause flag detected at D:\Testers\ai_qwen\pause_download.flag
+2025-10-01 14:52:03,761 - INFO - Pause requested after downloading %s. Exiting.

@@ -1,0 +1,6 @@
+2025-10-01 16:08:24,172 - INFO - Logging to D:\Testers\ai_qwen\logs\download_20251001_160824.log
+2025-10-01 16:08:24,174 - INFO - Enabled hf_xet-backed transfer for improved throughput.
+2025-10-01 16:08:24,185 - INFO - Fetching repository file list for Qwen/Qwen-Image-Edit-2509
+2025-10-01 16:08:24,795 - INFO - Found 35 files in repository
+2025-10-01 16:08:24,796 - INFO - Pause flag detected at D:\Testers\ai_qwen\pause_download.flag
+2025-10-01 16:08:24,797 - INFO - Pause requested before downloading %s. Exiting.

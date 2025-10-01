@@ -1,0 +1,45 @@
+2025-10-01 16:47:49,060 - INFO - Logging to D:\Testers\ai_qwen\logs\run_20251001_164749.log
+2025-10-01 16:47:49,060 - INFO - Preparing pipeline components...
+2025-10-01 16:48:51,323 - WARNING - Model CPU offload failed (CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+). Trying full GPU load.
+2025-10-01 16:48:51,373 - ERROR - Run failed due to unexpected error: It seems like you have activated sequential model offloading by calling `enable_sequential_cpu_offload`, but are now attempting to move the pipeline to GPU. This is not compatible with offloading. Please, move your pipeline `.to('cpu')` or consider removing the move altogether if you use sequential offloading.
+Traceback (most recent call last):
+  File "D:\Testers\ai_qwen\run_qwen_edit.py", line 67, in main
+    pipe.enable_sequential_cpu_offload()
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\pipelines\pipeline_utils.py", line 1331, in enable_sequential_cpu_offload
+    cpu_offload(model, device, offload_buffers=offload_buffers)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\big_modeling.py", line 207, in cpu_offload
+    attach_align_device_hook(
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 530, in attach_align_device_hook
+    attach_align_device_hook(
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 530, in attach_align_device_hook
+    attach_align_device_hook(
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 530, in attach_align_device_hook
+    attach_align_device_hook(
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 521, in attach_align_device_hook
+    add_hook_to_module(module, hook, append=True)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 166, in add_hook_to_module
+    module = hook.init_hook(module)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\hooks.py", line 317, in init_hook
+    set_module_tensor_to_device(
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\accelerate\utils\modeling.py", line 335, in set_module_tensor_to_device
+    new_value = old_value.to(device, non_blocking=non_blocking)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Testers\ai_qwen\run_qwen_edit.py", line 72, in main
+    pipe.to("cuda")
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\pipelines\pipeline_utils.py", line 474, in to
+    raise ValueError(
+ValueError: It seems like you have activated sequential model offloading by calling `enable_sequential_cpu_offload`, but are now attempting to move the pipeline to GPU. This is not compatible with offloading. Please, move your pipeline `.to('cpu')` or consider removing the move altogether if you use sequential offloading.

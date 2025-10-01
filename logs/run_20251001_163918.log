@@ -1,0 +1,79 @@
+2025-10-01 16:39:18,338 - INFO - Logging to D:\Testers\ai_qwen\logs\run_20251001_163918.log
+2025-10-01 16:39:18,338 - INFO - Preparing pipeline components...
+2025-10-01 16:40:19,422 - WARNING - Model CPU offload unavailable ('QwenImageEditPlusPipeline' object has no attribute 'enable_vae_slicing'). Attempting full GPU load with slicing optimizations.
+2025-10-01 16:41:13,383 - ERROR - GPU out of memory during initialization. Falling back to CPU-only mode.
+2025-10-01 16:41:13,391 - ERROR - Run failed due to unexpected error: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+Traceback (most recent call last):
+  File "D:\Testers\ai_qwen\run_qwen_edit.py", line 65, in main
+    pipe.enable_vae_slicing()
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\configuration_utils.py", line 144, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'QwenImageEditPlusPipeline' object has no attribute 'enable_vae_slicing'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Testers\ai_qwen\run_qwen_edit.py", line 72, in main
+    pipe.to("cuda")
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\pipelines\pipeline_utils.py", line 545, in to
+    module.to(device, dtype)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\models\modeling_utils.py", line 1423, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 1340, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  [Previous line repeated 2 more times]
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 927, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 1326, in convert
+    return t.to(
+           ^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Testers\ai_qwen\run_qwen_edit.py", line 81, in main
+    pipe.to("cpu")
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\diffusers\pipelines\pipeline_utils.py", line 545, in to
+    module.to(device, dtype)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\transformers\modeling_utils.py", line 4462, in to
+    return super().to(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 1340, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 900, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 927, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "C:\PythonEnv\p311_qwen\Lib\site-packages\torch\nn\modules\module.py", line 1326, in convert
+    return t.to(
+           ^^^^^
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
