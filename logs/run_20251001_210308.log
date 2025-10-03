@@ -1,0 +1,11 @@
+2025-10-01 21:03:08,977 - INFO - Logging to D:\Testers\ai_qwen\logs\run_20251001_210308.log
+2025-10-01 21:03:08,978 - INFO - Preparing pipeline components...
+2025-10-01 21:04:01,370 - INFO - Enabled model CPU offload for constrained VRAM GPUs.
+2025-10-01 21:04:01,384 - INFO - Pipeline loaded. Using device: cuda:0
+2025-10-01 21:04:01,390 - INFO - Processing images from D:\Testers\ai_qwen\images
+2025-10-01 21:04:01,391 - INFO - Saving outputs to D:\Testers\ai_qwen\output
+2025-10-01 21:04:01,540 - INFO - [1/3] Processing image-512-1.png
+2025-10-01 21:17:51,854 - INFO - Saved: D:\Testers\ai_qwen\output\image-512-1_edit.png
+2025-10-01 21:17:51,866 - INFO - [2/3] Processing image-512-2.jpeg
+2025-10-01 21:32:38,084 - INFO - Saved: D:\Testers\ai_qwen\output\image-512-2_edit.jpeg
+2025-10-01 21:32:38,094 - INFO - [3/3] Processing image-512-3.jpeg

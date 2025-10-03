@@ -1,0 +1,3 @@
+2025-10-01 21:54:41,672 - INFO - Logging to D:\Testers\ai_qwen\logs\run_20251001_215441.log
+2025-10-01 21:54:41,672 - INFO - Preparing pipeline components...
+2025-10-01 21:55:15,200 - WARNING - GPU out of memory during initialization. Switching to CPU float32 execution.

@@ -12,7 +12,7 @@ MODEL_ID = r"D:\\AIModels\Qwen-Image-Edit-2509"  # local download from `download
 IMAGES_DIR = Path("images")
 OUTPUT_DIR = Path("output")
 LOGS_DIR = Path("logs")
-PROMPT    = "colorise the image."
+PROMPT    = "Restore the photo’s original colors so it appears naturally colorized with lifelike skin tones, balanced lighting, and vibrant background details."
 
 
 def _configure_logging() -> logging.Logger:
@@ -47,7 +47,9 @@ def main() -> None:
 
     try:
         logger.info("Preparing pipeline components...")
-        dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        gpu_available = torch.cuda.is_available()
+        dtype = torch.bfloat16 if gpu_available else torch.float32
+
         pipe = QwenImageEditPlusPipeline.from_pretrained(
             MODEL_ID,
             torch_dtype=dtype,
@@ -55,41 +57,32 @@ def main() -> None:
             use_safetensors=True,
         )
 
-        gpu_available = torch.cuda.is_available()
-        execution_device = torch.device("cuda") if gpu_available else torch.device("cpu")
-
         if gpu_available:
             try:
-                pipe.enable_model_cpu_offload()
-                if hasattr(pipe, "enable_attention_slicing"):
-                    pipe.enable_attention_slicing()
-                if hasattr(pipe, "enable_sequential_cpu_offload"):
-                    pipe.enable_sequential_cpu_offload()
-                logger.info("Enabled model CPU offload for constrained VRAM GPUs.")
-            except Exception as exc:  # pylint: disable=broad-except
-                logger.warning("Model CPU offload failed (%s). Trying full GPU load.", exc)
-                try:
-                    pipe.to("cuda")
-                except RuntimeError as cuda_err:
-                    if "out of memory" in str(cuda_err).lower():
-                        logger.error("GPU out of memory during initialization. Falling back to CPU-only mode.")
-                        torch.cuda.empty_cache()
-                        pipe = QwenImageEditPlusPipeline.from_pretrained(
-                            MODEL_ID,
-                            torch_dtype=torch.float32,
-                            low_cpu_mem_usage=True,
-                            use_safetensors=True,
-                        )
-                        execution_device = torch.device("cpu")
-                        gpu_available = False
-                    else:
-                        raise
+                pipe.to("cuda")
+                logger.info("Pipeline moved to CUDA with dtype %s", dtype)
+            except RuntimeError as cuda_err:
+                if "out of memory" in str(cuda_err).lower():
+                    logger.warning("GPU out of memory during initialization. Switching to CPU float32 execution.")
+                    torch.cuda.empty_cache()
+                    gpu_available = False
+                else:
+                    raise
 
         if not gpu_available:
+            if dtype != torch.float32:
+                dtype = torch.float32
+                pipe = QwenImageEditPlusPipeline.from_pretrained(
+                    MODEL_ID,
+                    torch_dtype=dtype,
+                    low_cpu_mem_usage=True,
+                    use_safetensors=True,
+                )
+            pipe.to("cpu")
             logger.warning("Running on CPU – generation will be slow.")
 
-        execution_device = getattr(pipe, "_execution_device", execution_device)
-        logger.info("Pipeline loaded. Using device: %s", execution_device)
+        execution_device = torch.device("cuda") if gpu_available else torch.device("cpu")
+        logger.info("Pipeline ready. Execution device: %s, dtype: %s", execution_device, dtype)
 
         if not IMAGES_DIR.exists():
             raise FileNotFoundError(f"Images directory not found: {IMAGES_DIR.resolve()}")
@@ -113,19 +106,18 @@ def main() -> None:
 
             logger.info("[%d/%d] Processing %s", idx, len(image_paths), image_path.name)
 
-            img = img.resize((512, 512), Image.LANCZOS)
-
             generator = torch.Generator(device=execution_device).manual_seed(0)
             try:
-                result = pipe(
-                    image=[img],
-                    prompt=PROMPT,
-                    true_cfg_scale=4.0,
-                    num_inference_steps=24,
-                    guidance_scale=1.0,
-                    negative_prompt=" ",
-                    generator=generator,
-                )
+                with torch.inference_mode():
+                    result = pipe(
+                        image=[img],
+                        prompt=PROMPT,
+                        true_cfg_scale=4.0,
+                        num_inference_steps=40,
+                        guidance_scale=1.0,
+                        negative_prompt=" ",
+                        generator=generator,
+                    )
             except Exception as exc:  # pylint: disable=broad-except
                 logger.error("Failed to process %s: %s", image_path.name, exc)
                 continue
