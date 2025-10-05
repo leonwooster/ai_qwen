@@ -1,0 +1,30 @@
+# Core dependencies for Qwen Image Edit
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.30.0
+transformers>=4.40.0
+accelerate>=0.20.0
+
+# Image processing
+Pillow>=10.0.0
+
+# Hugging Face Hub (for model downloads)
+huggingface-hub>=0.20.0
+
+# HTTP and networking
+requests>=2.31.0
+urllib3>=2.0.0
+
+# ComfyUI API support (for run_comfyui_workflow.py)
+websocket-client>=1.6.0
+
+# Optional: For faster downloads
+# hf-transfer>=0.1.0
+
+# Development and utilities
+numpy>=1.24.0
+
+# Note: Install PyTorch with CUDA support for GPU acceleration
+# Visit: https://pytorch.org/get-started/locally/
+# Example for CUDA 12.1:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121

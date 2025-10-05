@@ -1,0 +1,109 @@
+# ============================================================================
+# Qwen Image Edit - Detailed Requirements
+# ============================================================================
+# This file includes specific versions tested with the project
+# For minimal installation, use requirements.txt instead
+# ============================================================================
+
+# ============================================================================
+# Core ML Framework
+# ============================================================================
+# PyTorch (Install with CUDA support separately - see below)
+torch>=2.1.0,<3.0.0
+torchvision>=0.16.0,<1.0.0
+
+# ============================================================================
+# Diffusion Models
+# ============================================================================
+diffusers>=0.30.0,<1.0.0          # Qwen Image Edit pipeline
+transformers>=4.40.0,<5.0.0       # Text encoders and tokenizers
+accelerate>=0.20.0,<1.0.0         # Model loading and optimization
+safetensors>=0.4.0                # Safe model format
+
+# ============================================================================
+# Image Processing
+# ============================================================================
+Pillow>=10.0.0,<11.0.0            # Image I/O and manipulation
+numpy>=1.24.0,<2.0.0              # Array operations
+
+# ============================================================================
+# Hugging Face Ecosystem
+# ============================================================================
+huggingface-hub>=0.20.0,<1.0.0    # Model downloads and API
+
+# ============================================================================
+# HTTP and Networking (for ComfyUI API)
+# ============================================================================
+requests>=2.31.0,<3.0.0           # HTTP requests
+urllib3>=2.0.0,<3.0.0             # URL handling
+websocket-client>=1.6.0,<2.0.0    # WebSocket for ComfyUI API
+
+# ============================================================================
+# Optional: Performance Enhancements
+# ============================================================================
+# Uncomment these for faster downloads and better performance
+# hf-transfer>=0.1.0              # Faster Hugging Face downloads
+# xformers>=0.0.20                # Memory-efficient attention (requires compatible PyTorch)
+
+# ============================================================================
+# Development Tools (Optional)
+# ============================================================================
+# Uncomment if you need development tools
+# pytest>=7.0.0                   # Testing
+# black>=23.0.0                   # Code formatting
+# pylint>=2.17.0                  # Linting
+# mypy>=1.0.0                     # Type checking
+
+# ============================================================================
+# PyTorch Installation Instructions
+# ============================================================================
+# PyTorch should be installed separately with CUDA support for GPU acceleration
+# 
+# For CUDA 12.1:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# For CUDA 11.8:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+# For CPU only:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+# Check your CUDA version:
+#   nvidia-smi
+#
+# Visit https://pytorch.org/get-started/locally/ for more options
+# ============================================================================
+
+# ============================================================================
+# Installation Order
+# ============================================================================
+# 1. Install PyTorch with CUDA support first (see above)
+# 2. Install this requirements file:
+#    pip install -r requirements-detailed.txt
+# 3. For ComfyUI API support, ensure websocket-client is installed
+# ============================================================================
+
+# ============================================================================
+# Script-Specific Requirements
+# ============================================================================
+# qwen-code-1.py:           torch, diffusers, Pillow, transformers
+# run_qwen_edit.py:         torch, diffusers, Pillow, transformers
+# download.py:              huggingface-hub, requests
+# run_comfyui_workflow.py:  websocket-client, requests, Pillow
+# comfyui_workflow.py:      requests, Pillow
+# comfyui_standalone.py:    torch, diffusers, Pillow, numpy
+# ============================================================================
+
+# ============================================================================
+# Memory Requirements
+# ============================================================================
+# GGUF Models (Quantized):
+#   - Q4_0: ~8GB disk, ~10GB VRAM
+#   - Q3_K_S: ~6GB disk, ~8GB VRAM
+#
+# Full Diffusers Models:
+#   - FP16: ~20GB disk, ~24GB VRAM
+#   - BF16: ~20GB disk, ~24GB VRAM
+#
+# Recommended: Use GGUF models with ComfyUI for lower VRAM usage
+# ============================================================================
